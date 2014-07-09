@@ -43,6 +43,13 @@ module Example
       end
     end
     languages.to_s
+languages = []
+language_obj.each do |lang, count|
+  languages.push :language => lang, :count => count
+end
+
+erb :lang_freq, :locals => { :languages => languages.to_json}
     end
+
   end
 end
